@@ -1,0 +1,16 @@
+.idea
+/target/*
+/logs/*
+.mvn
+HELP.md
+*.log*
+.settings
+*.class
+/bin/*
+application-prod.*
+/src/main/java/jib/*
+production-pom.xml
+azure-deploy.bash
+.classpath
+.project
+*.iml

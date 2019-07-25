@@ -1,0 +1,24 @@
+version: "2.1"
+services:
+  frontend:
+    image: frontend-demo
+    container_name: frontend-demo
+    ports:
+      - 4200:4200
+    depends_on:
+      - app
+  app:
+    # replace imageName with your image name (block in your case)
+    image: mongorest-demo
+    container_name: mongorest-demo
+    ports:
+      - 8080:8080 # Replace the port of your application here if used
+    depends_on: 
+      - mongo
+  mongo:
+    image: mongo
+    container_name: mongo
+    volumes:
+      - ~/data:/data/db
+    ports:
+      - 27017:27017

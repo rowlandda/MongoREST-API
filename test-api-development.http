@@ -1,0 +1,115 @@
+//CRUD OPERATIONS FOR INVOICES
+//-------------------------------------------------
+
+GET http://localhost:8080/invoice/
+
+###
+
+
+GET http://localhost:8080/invoice/1
+
+
+###
+
+POST http://localhost:8080/invoice/
+Content-Type: application/json
+
+{
+  "_id": "401",
+  "lookupID": 777,
+  "customerID": 105,
+  "date": "2018-08-03",
+  "totalCost": 555,
+  "totalSale": 200,
+  "items": [
+    {
+      "itemLookupID": 102,
+      "quantity": 10,
+      "cost": 5,
+      "sellPrice": 10
+    },
+    {
+      "itemLookupID": 400,
+      "quantity": 10,
+      "cost": 5,
+      "sellPrice": 10
+    }
+  ]
+}
+
+###
+
+PUT http://localhost:8080/invoice/2
+Content-Type: application/json
+
+{
+  "_id":2,
+  "version":0,
+  "lookupID":111,
+  "customerID":678,
+  "date":"2019-01-18",
+  "totalCost":404,
+  "totalSale":0,
+  "items":[]
+}
+
+###
+//bad put request (wrong version)
+PUT http://localhost:8080/invoice/2
+Content-Type: application/json
+
+{
+  "_id":2,
+  "version":700,
+  "lookupID":111,
+  "customerID":678,
+  "date":"2019-01-18",
+  "totalCost":404,
+  "totalSale":0,
+  "items":[]
+}
+
+###
+
+DELETE http://localhost:8080/invoice/1
+
+###
+
+DELETE http://localhost:8080/invoice/1
+
+###
+
+//INVOICE QUERIES
+//--------------------------------------------------------
+
+GET http://localhost:8080/invoice/searchByCustomerID?customerID=105
+
+###
+
+GET http://localhost:8080/invoice/searchByCustomerID?customerID=105
+
+###
+
+GET http://localhost:8080/invoice/totalSaleLessThan?totalSale=400
+
+###
+
+GET http://localhost:8080/invoice/totalSaleLessThan?totalSale=400
+
+###
+
+GET http://localhost:8080/invoice/totalSaleGreaterThan?totalSale=400
+
+###
+
+GET http://localhost:8080/invoice/totalSaleGreaterThan?totalSale=400
+
+###
+
+GET http://localhost:8080/invoice/getSaleSummary
+
+###
+
+GET http://localhost:8080/invoice/dateBetween?dateStart=2019-06-19&dateEnd=2019-07-19
+
+###

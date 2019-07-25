@@ -1,0 +1,151 @@
+//CRUD OPERATIONS FOR INVOICES
+//-------------------------------------------------
+
+GET http://mongorestapi2.azurewebsites.net/invoice/
+
+###
+
+GET http://mongorestapi2.azurewebsites.net/invoice/
+
+###
+
+GET http://mongorestapi2.azurewebsites.net/invoice/1
+
+
+###
+
+GET http://mongorestapi2.azurewebsites.net/invoice/1
+
+
+###
+
+POST http://mongorestapi2.azurewebsites.net/invoice/
+Content-Type: application/json
+
+{
+"id": "401",
+"lookupID": 777,
+"customerID": 105,
+"date": "2018-08-03",
+"totalCost": 555,
+"totalSale": 200,
+"items": [
+    {
+    "itemLookupID": 102,
+    "quantity": 10,
+    "cost": 5,
+    "sellPrice": 10
+    },
+    {
+    "itemLookupID": 400,
+    "quantity": 10,
+    "cost": 5,
+    "sellPrice": 10
+    }
+    ]
+}
+
+###
+
+
+POST http://mongorestapi2.azurewebsites.net/invoice/
+Content-Type: application/json
+
+{
+"_id": "402",
+"lookupID": 777,
+"customerID": 105,
+"date": "2018-08-03",
+"totalCost": 555,
+"totalSale": 200,
+"items": [
+    {
+    "itemLookupID": 102,
+    "quantity": 10,
+    "cost": 5,
+    "sellPrice": 10
+    },
+    {
+    "itemLookupID": 400,
+    "quantity": 10,
+    "cost": 5,
+    "sellPrice": 10
+    }
+    ]
+}
+
+###
+
+PUT http://mongorestapi2.azurewebsites.net/invoice/2
+Content-Type: application/json
+
+{
+"lookupID":111,
+"customerID":678,
+"date":"2019-01-18",
+"totalCost":404,
+"totalSale":0,
+"items":[]
+}
+
+###
+
+
+PUT http://mongorestapi2.azurewebsites.net/invoice/1
+Content-Type: application/json
+
+{
+"id":"1",
+"lookupID":112,
+"customerID":105,
+"date":"2019-01-18",
+"totalCost":404,
+"totalSale":0,
+"items":[]
+}
+
+###
+
+DELETE http://mongorestapi2.azurewebsites.net/invoice/1
+
+###
+
+DELETE http://mongorestapi2.azurewebsites.net/invoice/1
+
+###
+
+//INVOICE QUERIES
+//--------------------------------------------------------
+
+GET http://mongorestapi2.azurewebsites.net/invoice/searchByCustomerID?customerID=105
+
+###
+
+GET http://mongorestapi2.azurewebsites.net/invoice/searchByCustomerID?customerID=105
+
+###
+
+GET http://mongorestapi2.azurewebsites.net/invoice/totalSaleLessThan?totalSale=400
+
+###
+
+GET http://mongorestapi2.azurewebsites.net/invoice/totalSaleLessThan?totalSale=400
+
+###
+
+GET http://mongorestapi2.azurewebsites.net/invoice/totalSaleGreaterThan?totalSale=400
+
+###
+
+GET http://mongorestapi2.azurewebsites.net/invoice/totalSaleGreaterThan?totalSale=400
+
+###
+
+GET http://mongorestapi2.azurewebsites.net/invoice/getSaleSummary
+
+###
+
+GET http://mongorestapi2.azurewebsites.net/invoice/dateBetween?dateStart=2019-06-19&dateEnd=2019-07-19
+
+###
+
