@@ -1,4 +1,4 @@
-## mongorest
+## MongoREST
 
 RESTful API that interacts with a MongoDB database containing an arbitrary invoice document structure. Implemented in Java with Spring Boot and Maven.  For dev mode `application.properties` needs to have the line `spring.profiles.active=dev`, and the server looks for a MongoDB named `invoiceTest` on `localhost:27017` without login credentials required (MongoDB defaults).  The collection of invoice documents inside `invoiceTest` must be named `invoice`.
 
